@@ -32,14 +32,19 @@ html {
   width: 511px;
   height: 330px;
   position: relative;
+  overflow: hidden;
+}
+.cards:hover .card-body {
+  left: 0;
+  top: 0;
+  
 }
 .cards .imgbox img {
   border-radius: 8px;
-
   width: 511px;
   height: 330px;
 }
-.cards h2 {
+.cards .imgbox h2 {
   color: #fff;
   z-index: 1;
   text-align: center;
@@ -47,10 +52,15 @@ html {
   font-size: 28px;
   font-weight: 600;
   position: absolute;
-  top: 277px;
+  top: 250px;
   left: 77px;
+  transition: .5s;
+  
 }
-.cards h2 span {
+.cards:hover .imgbox h2{
+  top: 100%;
+}
+.cards span {
   color: #ffc758;
 }
 
@@ -78,41 +88,63 @@ html {
 }
 #textCard3 {
   left: 40px;
-  top: 250px;
+  /* top: 250px; */
 }
 #textCard2 {
   left: 30px;
-  top: 250px;
 }
 #textCard1 {
   left: 100px;
 }
 
-/* .popup :hover {
-  display: block;
+.card-body {
   position: absolute;
   width: 511px;
-  height: 145px;
-  top: 185px;
+  height: 330px;
+  top: 100%;
+  left:-100%;
+  background: #114a8dcc;
   border-radius: 8px;
-  background-color: rgba(17, 74, 141, 0.8);
-} */
-
-/* Add this CSS for the popup */
-.popup {
-  display: none;
-  position: absolute;
-  width: 511px;
-  height: 145px;
-  top: 185px;
-  border-radius: 8px;
-  background-color: rgba(17, 74, 141, 0.8);
   color: #fff;
-  padding: 20px;
-  box-sizing: border-box;
-  z-index: 2;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+  
+}
+.card-title {
+  padding: 20px 20px;
+}
+.card-title h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35.2px;
+  text-align: center;
+
+}
+.card-title h2 {
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
 }
 
-.cards:hover .popup {
-  display: block;
+@media screen and (max-width: 768px) {
+ 
+
+  #heading h1 {
+      font-size: 36px;
+  }
+
+  .cards {
+      max-width: 100%;
+  }
+
+  .cardContainer1,
+  .cardContainer2 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+  }
 }
